@@ -1,0 +1,19 @@
+{% extends "template.njk" %}
+{% block content %}
+
+<form action="/birds/login" method="post">
+
+    <div class="textblock">
+        <li>
+            <p>Användarnamn</p>
+            <input type="text" name="username">
+        </li>
+        <li>
+            <p>Lösenord</p>
+            <input type="password" name="password">
+        </li>
+        <button type="submit">Logga in</button>
+    </div>
+</form>
+
+{% endblock %}
