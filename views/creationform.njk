@@ -8,12 +8,16 @@
             <input type="text", id="name", name="name" required><br>
 
             <label for="species">Species:</label>
-            <input type="text", id="species", name="species" required><br>
+            <select name="species", id="species" required>
+                {% for option in options %}
+                    <option value={{option.speciesID}}>{{option.speciesName}}</option>
+                {% endfor %}
+            </select> <br>
 
             <label for="owner">Owner:</label>
             <select name="owner", id="owner" required>
-                {% for owners in validOwners %}
-                    <option value={{owners.name}}>{{owners.name}}</option>
+                {% for option in options %}
+                    <option value={{option.ownerID}}>{{option.ownerName}}</option>
                 {% endfor %}
             </select> <br>
 
