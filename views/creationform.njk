@@ -1,0 +1,29 @@
+{% extends "template.njk" %}
+{% block content %}
+
+<form action="/birds" method="post">
+    <div class="textblock">
+        <h2>Add new bird</h2>
+            <label for="name">Name:</label>
+            <input type="text", id="name", name="name" required><br>
+
+            <label for="species">Species:</label>
+            <input type="text", id="species", name="species" required><br>
+
+            <label for="owner">Owner:</label>
+            <select name="owner", id="owner" required>
+                {% for owners in validOwners %}
+                    <option value={{owners.name}}>{{owners.name}}</option>
+                {% endfor %}
+            </select> <br>
+
+            <label for="wingspan">Wingspan:</label>
+            <input type="number", id="wingspan", name="wingspan"><label for="wingspan" required>(cm)</label><br>
+
+            <label for="weight">Weight:</label>
+            <input type="number", id="weight", name="weight"><label for="weight" required>(g)</label><br>
+        <button type="submit">Send</button>
+    </div>
+</form>
+
+{% endblock %}

@@ -1,9 +1,11 @@
 {% extends "template.njk" %}
 {% block content %}
 
-<header>Fåglar:</header>
-{% for bird in birds %}
-
-{% endfor %}
+<div class="textblockHighlight">
+    <h1>Birds:</h1>
+    {% for bird in birds %}
+        {% include "components/singularbird.njk" %}
+    {% endfor %}
+</div>
 
 {% endblock %}
